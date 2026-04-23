@@ -22,8 +22,9 @@
     height: 6.2rem;
     object-fit: contain;
     margin-left: 15rem;
+
     @media(max-width: 996px){
-      margin-left: 5rem;
+      margin-left: 1rem;
     }
   }
 
@@ -92,7 +93,13 @@
         gap: 3rem;
       }
     }
-    
+
+    /* ===== ITEM ===== */
+    &__item {
+      position: relative;
+    }
+
+    /* ===== LINK ===== */
     &__link {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       font-size: 1.4rem;
@@ -101,11 +108,86 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
     }
-    
+
+    /* ===== CARET ===== */
     &__caret {
-      font-size: 1.8rem; 
-    } 
+      font-size: 1.8rem;
+      transition: transform 0.3s ease;
+    }
+
+    /* ===== SUBMENU ===== */
+    &__submenu {
+      display: block;
+      position: absolute;
+      top: 120%;
+      left: 0;
+      min-width: 22rem;
+      background: $color-white;
+      border-radius: 0.8rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.25s ease;
+
+      z-index: 1000;
+
+      li {
+        list-style: none;
+      }
+
+      @include desktop {
+        position: absolute;
+      }
+
+      /* MOBILE: vira bloco normal */
+      @media(max-width: 996px){
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 1rem;
+        display: none;
+      }
+    }
+
+    &__sublink {
+      display: block;
+      padding: 1rem 1.5rem;
+      font-size: 1.3rem;
+      color: #1A5D09;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+
+    /* ===== ESTADO ABERTO ===== */
+    &__item--open {
+
+      .nav__submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+
+        @media(max-width: 996px){
+          display: block;
+        }
+      }
+
+      .nav__caret {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__search {
@@ -114,6 +196,7 @@
     cursor: pointer;
     color: $color-text-dark;
     display: none;
+
     @include desktop{
       display: block;
     }

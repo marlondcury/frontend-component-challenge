@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="icon" type="image/x-icon" href="assets/img/svg/logo.svg">
+  <link rel="icon" type="image/x-icon" href="assets/img/svg/">
 </head>
 
 <body>
@@ -23,8 +23,28 @@
       <div class="header__actions">
         <nav class="nav">
           <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__link">Quem Somos <span class="nav__caret">▾</span></a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Onde Estamos <span class="nav__caret">▾</span></a></li>
+            <li class="nav__item nav__item--has-submenu">
+              <button class="nav__link nav__toggle">
+                Quem Somos <span class="nav__caret">▾</span>
+              </button>
+
+              <ul class="nav__submenu">
+                <li><a href="#" class="nav__sublink">O Grupo</a></li>
+                <li><a href="#" class="nav__sublink">Missão, Visão e Valores</a></li>
+              </ul>
+            </li>
+            <li class="nav__item nav__item--has-submenu">
+              <button class="nav__link nav__toggle">
+                Onde Estamos <span class="nav__caret">▾</span>
+              </button>
+
+              <ul class="nav__submenu">
+                <li><a href="#" class="nav__sublink">Mauá</a></li>
+                <li><a href="#" class="nav__sublink">Pouso Alegre</a></li>
+                  <li><a href="#" class="nav__sublink">Uberaba</a></li>
+              </ul>
+            </li>
+
             <li class="nav__item"><a href="#" class="nav__link">Notícias <span class="nav__caret">▾</span></a></li>
             <li class="nav__item"><a href="#" class="nav__link">Compliance</a></li>
             <li class="nav__item"><a href="#" class="nav__link">Contato <span class="nav__caret">▾</span></a></li>
@@ -147,7 +167,7 @@
     <section class="locations">
 
       <div class="locations__tabs">
-        <button class="locations__tab locations__tab--pink active" data-target="maua">MAUÁ</button>
+        <button class="locations__tab locations__tab--pink active" data-target="maua" id="btn-maua">MAUÁ</button>
         <button class="locations__tab locations__tab--blue" data-target="pouso">POUSO ALEGRE/MG</button>
         <button class="locations__tab locations__tab--orange" data-target="uberaba">UBERABA/MG</button>
       </div>
@@ -350,6 +370,8 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/toggle.js"></script>
   <script src="assets/js/backToTop.js"></script>
+  <script src="assets/js/goToBottom.js"></script>
+
 </body>
 
 </html>

@@ -131,7 +131,7 @@ p {
 }
 @media (max-width: 996px) {
   .header__logo {
-    margin-left: 5rem;
+    margin-left: 1rem;
   }
 }
 .header__actions {
@@ -197,6 +197,15 @@ p {
     gap: 3rem;
   }
 }
+.header .nav {
+  /* ===== ITEM ===== */
+}
+.header .nav__item {
+  position: relative;
+}
+.header .nav {
+  /* ===== LINK ===== */
+}
 .header .nav__link {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.4rem;
@@ -205,9 +214,84 @@ p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.header .nav {
+  /* ===== CARET ===== */
 }
 .header .nav__caret {
   font-size: 1.8rem;
+  transition: transform 0.3s ease;
+}
+.header .nav {
+  /* ===== SUBMENU ===== */
+}
+.header .nav__submenu {
+  display: block;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  min-width: 22rem;
+  background: #FFFFFF;
+  border-radius: 0.8rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
+.header .nav__submenu li {
+  list-style: none;
+}
+@media (min-width: 992px) {
+  .header .nav__submenu {
+    position: absolute;
+  }
+}
+.header .nav__submenu {
+  /* MOBILE: vira bloco normal */
+}
+@media (max-width: 996px) {
+  .header .nav__submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: none;
+  }
+}
+.header .nav__sublink {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.3rem;
+  color: #1A5D09;
+  transition: background 0.2s;
+}
+.header .nav__sublink:hover {
+  background: #f2f2f2;
+}
+.header .nav {
+  /* ===== ESTADO ABERTO ===== */
+}
+.header .nav__item--open .nav__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+@media (max-width: 996px) {
+  .header .nav__item--open .nav__submenu {
+    display: block;
+  }
+}
+.header .nav__item--open .nav__caret {
+  transform: rotate(180deg);
 }
 .header__search {
   background: transparent;
@@ -718,7 +802,7 @@ p {
 
 .footer {
   background-color: #F4F4F4;
-  padding: 6rem 0 2rem;
+  padding: 1rem 0 2rem;
 }
 .footer__grid {
   display: grid;
