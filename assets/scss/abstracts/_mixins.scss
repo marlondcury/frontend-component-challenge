@@ -1,0 +1,13 @@
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin text-paragraph {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  letter-spacing: $letter-spacing-base;
+  font-style: normal; 
+}

@@ -1,0 +1,12 @@
+.about {
+  background-color: $color-bg-light; 
+  position: relative;
+  z-index: 1;
+
+  &__grid {
+    display: flex; flex-direction: column; gap: 4rem; align-items: center;
+    @include desktop { flex-direction: row; }
+  }
+  &__content { flex: 1; }
+  &__logo { flex: 1; display: flex; justify-content: center; }
+}

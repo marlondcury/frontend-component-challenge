@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  /* Usamos padding-top e padding-bottom em vez da abreviação para não zerar as laterais */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  
+  @include desktop {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
